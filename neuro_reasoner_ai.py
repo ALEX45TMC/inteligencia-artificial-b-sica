@@ -655,7 +655,337 @@ class NeuralReasoner:
 
 
 def main():
-    """Función principal para demostrar las capacidades de la IA"""
+    """
+    ============================================================================
+    NEURO-REASONER AI v1.0 - SISTEMA EXPERIMENTAL DE INTELIGENCIA ARTIFICIAL
+                     CON CAPACIDAD AVANZADA DE RAZONAMIENTO
+    ============================================================================
+    
+    📖 DESCRIPCIÓN DEL PROYECTO
+    ---------------------------
+    NEURO-REASONER AI es un sistema experimental de inteligencia artificial diseñado
+    para emular procesos de razonamiento humano mediante múltiples estrategias lógicas.
+    A diferencia de los modelos de lenguaje tradicionales que predicen texto, este
+    sistema implementa un motor de inferencia explícito que rastrea cada paso del
+    proceso de pensamiento, permitiendo transparencia total en cómo se llega a las
+    conclusiones.
+    
+    El sistema combina:
+    • Redes semánticas para representación del conocimiento
+    • Lógica difusa para manejo de incertidumbre
+    • Múltiples paradigmas de razonamiento (deductivo, inductivo, abductivo, etc.)
+    • Mecanismos de aprendizaje adaptativo
+    • Trazabilidad completa de inferencias
+    
+    ============================================================================
+    🧠 NIVELES DE RAZONAMIENTO IMPLEMENTADOS
+    ============================================================================
+    
+    1. RAZONAMIENTO DEDUCTIVO (Deductive Reasoning)
+       ─────────────────────────────────────────────
+       • Propósito: Derivar conclusiones específicas desde premisas generales
+       • Método: De lo general → particular (top-down)
+       • Certeza: Si las premisas son verdaderas, la conclusión ES verdadera
+       • Ejemplo clásico:
+           Premisa 1: Todos los humanos son mortales
+           Premisa 2: Sócrates es humano
+           Conclusión: Sócrates es mortal
+       • Casos de uso: Validación lógica, verificación de teoremas, diagnóstico
+         médico basado en reglas, sistemas expertos
+       • Implementación: Modus Ponens, Modus Tollens, Silogismos categóricos
+       • Nivel de confianza: Alto (0.8-1.0) cuando las premisas están validadas
+    
+    2. RAZONAMIENTO INDUCTIVO (Inductive Reasoning)
+       ──────────────────────────────────────────────
+       • Propósito: Generalizar patrones desde observaciones específicas
+       • Método: De lo particular → general (bottom-up)
+       • Certeza: Conclusiones probables pero NO garantizadas
+       • Ejemplo clásico:
+           Observación: El sol ha salido todos los días registrados
+           Conclusión: El sol saldrá mañana
+       • Casos de uso: Aprendizaje automático, descubrimiento científico,
+         predicción de tendencias, reconocimiento de patrones
+       • Implementación: Generalización estadística, identificación de patrones,
+         extrapolación de series temporales
+       • Nivel de confianza: Medio-Alto (0.5-0.8) depende del tamaño muestral
+    
+    3. RAZONAMIENTO ABDUCTIVO (Abductive Reasoning)
+       ─────────────────────────────────────────────
+       • Propósito: Inferir la mejor explicación para observaciones dadas
+       • Método: De efectos → causas probables
+       • Certeza: Hipótesis más plausible, no necesariamente verdadera
+       • Ejemplo clásico:
+           Observación: El césped está mojado
+           Explicación posible: Llovió anoche (mejor explicación disponible)
+       • Casos de uso: Diagnóstico médico, investigación forense, debugging
+         de software, detección de fallos en sistemas
+       • Implementación: Búsqueda de explicaciones, ranking por plausibilidad,
+         eliminación de hipótesis inconsistentes
+       • Nivel de confianza: Medio (0.4-0.7) requiere validación adicional
+    
+    4. RAZONAMIENTO ANALÓGICO (Analogical Reasoning)
+       ──────────────────────────────────────────────
+       • Propósito: Transferir conocimiento entre dominios similares
+       • Método: Mapeo estructural entre situaciones paralelas
+       • Certeza: Depende de la fuerza de la analogía
+       • Ejemplo clásico:
+           Dominio fuente: El átomo es como un sistema solar
+           Dominio objetivo: Electrones orbitan el núcleo como planetas
+       • Casos de uso: Resolución creativa de problemas, enseñanza, innovación,
+         transferencia de soluciones entre campos
+       • Implementación: Detección de isomorfismos estructurales, mapeo de
+         relaciones, proyección de propiedades
+       • Nivel de confianza: Variable (0.3-0.7) según calidad del mapeo
+    
+    5. RAZONAMIENTO CAUSAL (Causal Reasoning)
+       ───────────────────────────────────────
+       • Propósito: Establecer relaciones causa-efecto entre eventos
+       • Método: Análisis de dependencias causales
+       • Certeza: Probabilística, considera factores de confusión
+       • Ejemplo clásico:
+           Causa: Fumar cigarrillos
+           Efecto: Mayor riesgo de cáncer de pulmón
+       • Casos de uso: Análisis de políticas, economía, epidemiología,
+         ciencias sociales, toma de decisiones estratégicas
+       • Implementación: Redes bayesianas simplificadas, análisis contrafactual,
+         criterios de Bradford Hill
+       • Nivel de confianza: Medio-Alto (0.6-0.9) con evidencia suficiente
+    
+    ============================================================================
+    🛠️ INSTALACIÓN
+    ============================================================================
+    
+    REQUISITOS PREVIOS:
+    • Python 3.7 o superior (verificar con: python3 --version)
+    • No requiere librerías externas (solo biblioteca estándar)
+    • Sistema operativo: Linux, macOS o Windows con Python instalado
+    • Memoria RAM mínima: 256 MB
+    • Espacio en disco: < 1 MB
+    
+    PASOS DE INSTALACIÓN:
+    
+    1. Verificar que Python está instalado:
+       $ python3 --version
+       (Debe mostrar Python 3.7.x o superior)
+    
+    2. Clonar o descargar el archivo:
+       $ git clone <repositorio>
+       O simplemente copiar neuro_reasoner_ai.py a tu directorio de trabajo
+    
+    3. Verificar integridad del archivo:
+       $ ls -lh neuro_reasoner_ai.py
+       (Debe mostrar ~750 líneas, ~25KB)
+    
+    4. (Opcional) Crear entorno virtual:
+       $ python3 -m venv venv_neuro
+       $ source venv_neuro/bin/activate  # En Windows: venv_neuro\\Scripts\\activate
+    
+    5. No se requiere instalación de dependencias adicionales
+       (El sistema usa exclusivamente la biblioteca estándar de Python)
+    
+    ============================================================================
+    ▶️ EJECUCIÓN
+    ============================================================================
+    
+    MÉTODO 1: Ejecución directa (recomendado para pruebas)
+    ───────────────────────────────────────────────────────
+    $ python3 neuro_reasoner_ai.py
+    
+    Esto ejecutará:
+    • Inicialización del sistema con base de conocimiento precargada
+    • Demostración automática de los 5 tipos de razonamiento
+    • Pruebas de ejemplo con trazabilidad completa
+    • Demostración de aprendizaje adaptativo
+    • Exportación de conocimiento a formato JSON
+    
+    MÉTODO 2: Uso interactivo en Python
+    ────────────────────────────────────
+    $ python3
+    >>> from neuro_reasoner_ai import NeuroReasonerAI
+    >>> ai = NeuroReasonerAI()
+    >>> result = ai.reason("Si todos los gatos son mamíferos y Félix es gato, ¿qué es Félix?")
+    >>> print(result['conclusion'])
+    
+    MÉTODO 3: Como módulo importable
+    ────────────────────────────────
+    from neuro_reasoner_ai import NeuroReasonerAI, ReasoningType
+    
+    # Crear instancia
+    ai = NeuroReasonerAI(verbose=True)
+    
+    # Añadir conocimiento personalizado
+    ai.add_knowledge("aves", {"pueden_volar": True, "tienen_plumas": True})
+    ai.add_relation("aves", "subclase_de", "animales")
+    
+    # Realizar razonamiento
+    resultado = ai.reason("¿Puede un águila volar?")
+    print(f"Conclusión: {resultado['conclusion']}")
+    print(f"Confianza: {resultado['confidence']:.2%}")
+    print(f"Tipo de razonamiento: {resultado['reasoning_type']}")
+    
+    MÉTODO 4: Modo silencioso (para integración en otros sistemas)
+    ───────────────────────────────────────────────────────────────
+    ai = NeuroReasonerAI(verbose=False)
+    result = ai.reason("consulta")
+    # Solo devuelve el diccionario de resultados sin imprimir nada
+    
+    ARGUMENTOS DE LÍNEA DE COMANDOS (futuras versiones):
+    • --query "texto" : Ejecutar una consulta específica
+    • --verbose       : Mostrar trazabilidad detallada
+    • --export        : Exportar base de conocimiento después de ejecutar
+    • --learn archivo : Cargar conocimiento desde archivo JSON
+    
+    ============================================================================
+    🎯 FUNCIONALIDAD Y CASOS DE USO
+    ============================================================================
+    
+    PROPÓSITO PRINCIPAL:
+    Proporcionar un framework experimental para estudiar y emular procesos de
+    razonamiento humano en sistemas de IA, con énfasis en transparencia y
+    trazabilidad del proceso cognitivo.
+    
+    APLICACIONES PRÁCTICAS:
+    
+    1. SISTEMAS EXPERTOS
+       • Diagnóstico médico basado en síntomas y reglas
+       • Soporte a decisiones legales
+       • Configuración técnica de productos complejos
+    
+    2. EDUCACIÓN Y ENSEÑANZA
+       • Tutor inteligente que explica su razonamiento
+       • Herramienta para enseñar lógica y pensamiento crítico
+       • Simulador de resolución de problemas paso a paso
+    
+    3. INVESTIGACIÓN EN IA
+       • Estudio comparativo de diferentes tipos de razonamiento
+       • Prototipado rápido de sistemas basados en conocimiento
+       • Análisis de trazabilidad en decisiones de IA
+    
+    4. ANÁLISIS DE DATOS
+       • Detección de patrones y anomalías
+       • Generación de hipótesis explicativas
+       • Inferencia causal en estudios observacionales
+    
+    5. AUTOMATIZACIÓN INTELIGENTE
+       • Debugging automático de código
+       • Diagnóstico de fallos en sistemas industriales
+       • Clasificación y categorización inteligente
+    
+    CARACTERÍSTICAS TÉCNICAS DESTACADAS:
+    
+    ✓ Base de Conocimiento Semántica
+      - Nodos interconectados con propiedades y relaciones
+      - Herencia de propiedades a través de jerarquías
+      - Actualización dinámica con nuevo conocimiento
+    
+    ✓ Motor de Inferencia Multi-Estrategia
+      - 9+ reglas de inferencia lógica
+      - Selección automática del tipo de razonamiento óptimo
+      - Combinación de múltiples estrategias cuando es necesario
+    
+    ✓ Sistema de Confianza Gradual
+      - 6 niveles de certeza (Very Low → Certain)
+      - Propagación de incertidumbre en inferencias
+      - Umbrales configurables para aceptación de conclusiones
+    
+    ✓ Trazabilidad Completa
+      - Registro de cada paso del razonamiento
+      - Identificación de premisas usadas
+      - Explicación de por qué se rechazaron alternativas
+    
+    ✓ Aprendizaje Adaptativo
+      - Incorporación de nuevo conocimiento durante la ejecución
+      - Ajuste de confianza basado en retroalimentación
+      - Detección y resolución de contradicciones
+    
+    ✓ Exportación e Interoperabilidad
+      - Formato JSON para intercambio de conocimiento
+      - API clara para integración con otros sistemas
+      - Sin dependencias externas complicadas
+    
+    ============================================================================
+    📊 ARQUITECTURA DEL SISTEMA
+    ============================================================================
+    
+    COMPONENTES PRINCIPALES:
+    
+    1. KnowledgeBase (Base de Conocimiento)
+       - Almacena conceptos como nodos en una red semántica
+       - Gestiona relaciones (subclase_de, instancia_de, propiedad_de, etc.)
+       - Mantiene metadatos: confianza, fuente, timestamp
+    
+    2. InferenceEngine (Motor de Inferencia)
+       - Implementa reglas lógicas (Modus Ponens, Tollens, etc.)
+       - Selecciona estrategia de razonamiento según la consulta
+       - Combina evidencias múltiples
+    
+    3. ConfidenceManager (Gestor de Confianza)
+       - Calcula niveles de certeza en conclusiones
+       - Propaga incertidumbre a través de inferencias
+       - Aplica umbrales de aceptación
+    
+    4. ReasoningTracer (Trazador de Razonamiento)
+       - Registra cada paso del proceso
+       - Genera explicaciones comprensibles
+       - Permite auditoría del proceso decisional
+    
+    5. LearningModule (Módulo de Aprendizaje)
+       - Incorpora nueva información
+       - Ajusta confianzas existentes
+       - Detecta y resuelve contradicciones
+    
+    ============================================================================
+    🧪 EJEMPLO DE EJECUCIÓN
+    ============================================================================
+    
+    Al ejecutar: python3 neuro_reasoner_ai.py
+    
+    El sistema realizará automáticamente:
+    
+    1. Inicialización con 24 conceptos precargados
+    2. Prueba de razonamiento deductivo (silogismo de Sócrates)
+    3. Prueba de razonamiento inductivo (patrón climático)
+    4. Prueba de razonamiento abductivo (diagnóstico de síntomas)
+    5. Prueba de razonamiento analógico (transferencia entre dominios)
+    6. Prueba de razonamiento causal (relación causa-efecto)
+    7. Demostración de aprendizaje (incorporar nuevo concepto)
+    8. Exportación de toda la base de conocimiento a JSON
+    
+    Salida esperada incluye:
+    - Tipo de razonamiento detectado
+    - Premisas utilizadas
+    - Pasos de inferencia
+    - Conclusión final
+    - Nivel de confianza (0.0 - 1.0)
+    - Alternativas consideradas y por qué fueron descartadas
+    
+    ============================================================================
+    ⚠️ LIMITACIONES Y CONSIDERACIONES
+    ============================================================================
+    
+    • Este es un sistema EXPERIMENTAL, no está diseñado para producción crítica
+    • La base de conocimiento inicial es limitada y debe expandirse
+    • No tiene acceso a información en tiempo real (internet, APIs, etc.)
+    • El razonamiento depende de la calidad del conocimiento precargado
+    • No reemplaza juicio humano en decisiones importantes
+    • Las conclusiones son tan buenas como las premisas proporcionadas
+    
+    ============================================================================
+    🚀 FUTURAS MEJORAS POTENCIALES
+    ============================================================================
+    
+    • Integración con LLMs para extracción automática de conocimiento
+    • Interfaz gráfica para visualización de la red semántica
+    • Persistencia en base de datos (SQLite, PostgreSQL)
+    • API REST para acceso remoto
+    • Soporte para razonamiento probabilístico avanzado
+    • Módulo de retroalimentación para ajuste continuo
+    • Plugins para dominios específicos (medicina, derecho, ingeniería)
+    
+    ============================================================================
+    © 2024 NEURO-REASONER AI - Proyecto Experimental de Código Abierto
+    ============================================================================
+    """
     
     print("\n" + "="*70)
     print("🤖 NEURO-REASONER AI v1.0 - Sistema Experimental de IA")
